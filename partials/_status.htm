@@ -1,0 +1,13 @@
+<div id="mediaConverter-status">
+<?php if (count($model->converted) == 0): ?>
+    keine Medien vorhanden
+<?php endif; ?>
+<?php foreach ($model->converted as $converted): ?>
+    <?php
+        $alt = 'Media: ' . $converted->media_id . "\n";
+        $alt .= 'File: ' . $converted->disk_name;
+    ?>
+    <img src="<?= url('plugins/xitara/mediaconverter/assets/images/' .
+        $converted->status); ?>.png" alt="<?= $alt; ?>" title="<?= $alt; ?>">
+<?php endforeach; ?>
+</div>
